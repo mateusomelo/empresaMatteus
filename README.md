@@ -61,16 +61,28 @@ Todo o conteúdo (serviços, experiência, diferenciais, FAQ, portfólio etc.) f
 Como os dados reais da empresa não foram fornecidos no momento da geração do projeto, os seguintes pontos usam valores de exemplo e **precisam ser conferidos/atualizados antes do lançamento**:
 
 1. **`src/data/company.js`** — arquivo único com todos os dados de contato:
-   - `whatsappNumber` / `whatsappDisplay`: número de exemplo (`5565912345678`). Em modo de desenvolvimento, o console do navegador avisa enquanto esse valor não for trocado.
-   - `email`: `contato@matteustecnologia.com.br` (exemplo).
+   - `whatsappNumber` / `whatsappDisplay`: **já são reais** (`5511985996532` / `(11) 98599-6532`), usados tanto no botão flutuante e nos CTAs quanto no redirecionamento automático do formulário de orçamento (veja seção "Formulário → WhatsApp" abaixo).
+   - `email`: `contato@matteustecnologia.com.br` — ainda é exemplo, troque para o e-mail real.
    - `siteUrl`: domínio de exemplo — troque para o domínio definitivo.
    - `documentId`: `65.123.179` foi o identificador informado, mas um CNPJ completo tem 14 dígitos (`XX.XXX.XXX/0001-XX`). Confirme/complete antes de exibir publicamente.
+   - `city`/`state`: preenchidos como "São Paulo/SP" a partir do DDD 11 do WhatsApp — corrija se a cidade real for outra.
    - `social.linkedin` / `social.github`: estão `null` de propósito — os ícones correspondentes só aparecem no rodapé quando você preencher uma URL real.
 2. **Domínio nos arquivos estáticos**: `index.html` (canonical, Open Graph, Twitter Card), `public/robots.txt` e `public/sitemap.xml` usam o mesmo domínio de exemplo — troque todas as ocorrências de `matteustecnologia.com.br` pelo domínio real.
-3. **Logo**: a navbar/rodapé usam um monograma "M" feito em SVG (`src/components/Common/Logo.jsx`) nas cores da marca, já que o arquivo de logo definitivo não foi fornecido como arquivo. Para usar a arte final (a mesma do briefing, com os ícones de CFTV/Redes/Automação), salve o arquivo em `src/assets/logos/` e substitua o conteúdo de `Logo.jsx` por uma tag `<img>` apontando para ele.
-4. **Portfólio** (`src/data/portfolio.js`): cada item tem `image: null` — os cards mostram um ícone/gradiente de categoria enquanto isso. Para adicionar fotos reais, salve os arquivos (formato `.webp`) em `src/assets/images/portfolio/`, importe-os no arquivo de dados e preencha `image`, `projectUrl` e `githubUrl` conforme aplicável.
-5. **Depoimentos** (`src/data/testimonials.js`): propositalmente vazio — nenhum depoimento fictício foi criado. Assim que houver avaliações reais de clientes, adicione-as nesse array no formato indicado no próprio arquivo e o carrossel passa a exibi-las automaticamente.
-6. **`public/og-cover.png`**: imagem de compartilhamento (Open Graph/Twitter) gerada automaticamente a partir de `scripts/generate-og-image.mjs`. Rode `npm run generate:og` novamente sempre que atualizar nome, tagline ou domínio em `company.js`.
+3. **Portfólio** (`src/data/portfolio.js`): cada item tem `image: null` — os cards mostram um ícone/gradiente de categoria enquanto isso. Para adicionar fotos reais, salve os arquivos (formato `.webp`) em `src/assets/images/portfolio/`, importe-os no arquivo de dados e preencha `image`, `projectUrl` e `githubUrl` conforme aplicável.
+4. **Depoimentos** (`src/data/testimonials.js`): propositalmente vazio — nenhum depoimento fictício foi criado. Assim que houver avaliações reais de clientes, adicione-as nesse array no formato indicado no próprio arquivo e o carrossel passa a exibi-las automaticamente.
+5. **`public/og-cover.png`**: imagem de compartilhamento (Open Graph/Twitter) gerada automaticamente a partir de `scripts/generate-og-image.mjs`. Rode `npm run generate:og` novamente sempre que atualizar nome, tagline ou domínio em `company.js`.
+
+## Logo
+
+A arte de marca real (o "MM" metálico com câmera/RJ45, fornecida pelo cliente) está em `src/assets/logos/matteus-brand.webp` e aparece em destaque na seção **Sobre** (`src/components/About/About.jsx`). A navbar e o rodapé continuam usando um monograma "M" em SVG (`src/components/Common/Logo.jsx`) porque a arte completa é muito detalhada para caber legível numa logo compacta de cabeçalho — se preferir usar um recorte dela ali também, edite `Logo.jsx`.
+
+## Formulário → WhatsApp
+
+Ao enviar o formulário de orçamento (`#contato`), o site:
+1. Abre automaticamente o WhatsApp (`https://wa.me/5511985996532`) em uma nova aba, com uma mensagem já preenchida com nome, telefone, e-mail, serviço de interesse e a mensagem digitada — mesmo comportamento usado em outros sites do cliente.
+2. Em paralelo, também registra o envio no Netlify Forms (histórico de leads no painel da Netlify), sem bloquear o redirecionamento caso essa etapa falhe.
+
+Para trocar o número de destino, edite apenas `whatsappNumber` em `src/data/company.js`.
 
 Nenhum desses pontos impede o `npm install`/`npm run dev`/`npm run build` — o site funciona 100% mesmo sem essas trocas, mas exibirá os dados de exemplo até serem atualizados.
 

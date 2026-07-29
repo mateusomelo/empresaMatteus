@@ -2,13 +2,13 @@
  * Dados centrais da empresa/marca.
  *
  * IMPORTANTE — ANTES DE PUBLICAR:
- * Os campos marcados com "// SUBSTITUIR" abaixo contêm valores de exemplo
- * (número de WhatsApp, e-mail, domínio e redes sociais) porque ainda não
- * foram fornecidos os dados reais. Troque-os aqui — é o único lugar do
- * projeto onde eles são definidos, todo o site consome a partir daqui.
+ * Os campos marcados com "// SUBSTITUIR" abaixo ainda contêm valores de
+ * exemplo (e-mail, domínio e redes sociais) porque não foram fornecidos os
+ * dados reais. Troque-os aqui — é o único lugar do projeto onde eles são
+ * definidos, todo o site consome a partir daqui.
  */
 
-const WHATSAPP_NUMBER = '5565912345678' // SUBSTITUIR: DDI+DDD+número reais (ex: 5565991234567)
+const WHATSAPP_NUMBER = '5511985996532'
 const IS_PLACEHOLDER_WHATSAPP = WHATSAPP_NUMBER === '5565912345678'
 
 export const company = {
@@ -21,10 +21,10 @@ export const company = {
 
   email: 'contato@matteustecnologia.com.br', // SUBSTITUIR: e-mail real de contato
   whatsappNumber: WHATSAPP_NUMBER,
-  whatsappDisplay: '(65) 9 9123-4567', // SUBSTITUIR: formato de exibição do número real
+  whatsappDisplay: '(11) 98599-6532',
 
-  city: 'Cuiabá',
-  state: 'MT',
+  city: 'São Paulo', // Inferido do DDD 11 do WhatsApp — corrija se não for a cidade correta
+  state: 'SP',
   country: 'Brasil',
 
   siteUrl: 'https://www.matteustecnologia.com.br', // SUBSTITUIR pelo domínio definitivo

@@ -1,15 +1,7 @@
-import { Server, Code2, ShieldCheck, UserCheck } from 'lucide-react'
 import Container from '../Common/Container.jsx'
 import SectionHeading from '../Common/SectionHeading.jsx'
 import Reveal from '../Common/Reveal.jsx'
-import GlassCard from '../Common/GlassCard.jsx'
-
-const pillars = [
-  { icon: Server, label: 'Infraestrutura física' },
-  { icon: Code2, label: 'Desenvolvimento de software' },
-  { icon: ShieldCheck, label: 'Segurança e boas práticas' },
-  { icon: UserCheck, label: 'Atendimento personalizado' },
-]
+import brandLogo from '../../assets/logos/matteus-brand.webp'
 
 export default function About() {
   return (
@@ -40,18 +32,16 @@ export default function About() {
           </div>
 
           <Reveal direction="left" delay={0.1}>
-            <div className="grid grid-cols-2 gap-4">
-              {pillars.map(({ icon: Icon, label }, index) => (
-                <GlassCard
-                  key={label}
-                  className={index % 2 === 1 ? 'translate-y-6 p-6' : 'p-6'}
-                >
-                  <span className="inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-neon-500/15 to-cyan-glow/10 text-neon-500 dark:text-neon-300">
-                    <Icon className="size-6" />
-                  </span>
-                  <p className="mt-4 text-sm font-semibold text-ink-950 dark:text-white">{label}</p>
-                </GlassCard>
-              ))}
+            <div className="relative overflow-hidden rounded-3xl border border-graphite-100 bg-ink-950 p-2 shadow-xl shadow-ink-950/10 dark:border-white/10">
+              <div className="pointer-events-none absolute -inset-10 -z-10 rounded-full bg-neon-500/20 blur-[100px]" />
+              <img
+                src={brandLogo}
+                alt="Matteus Oliveira de Melo — CFTV, Redes, Telefonia, Automação Residencial, Controle de Acesso e Infraestrutura de Cabeamento"
+                loading="lazy"
+                width={1200}
+                height={800}
+                className="w-full rounded-2xl"
+              />
             </div>
           </Reveal>
         </div>

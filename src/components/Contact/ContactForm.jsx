@@ -1,13 +1,27 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Send, CheckCircle2, AlertCircle } from 'lucide-react'
+import { Send, CheckCircle2 } from 'lucide-react'
 import Button from '../Common/Button.jsx'
 import { services } from '../../data/services.js'
+import { whatsappLink } from '../../data/company.js'
 
 function encode(data) {
   return Object.keys(data)
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&')
+}
+
+function buildWhatsappMessage(values) {
+  return [
+    'Olá! Gostaria de solicitar um orçamento pelo site.',
+    '',
+    `Nome: ${values.nome}`,
+    `Telefone: ${values.telefone}`,
+    `E-mail: ${values.email}`,
+    `Serviço de interesse: ${values.servico}`,
+    '',
+    `Mensagem: ${values.mensagem}`,
+  ].join('\n')
 }
 
 export default function ContactForm() {
@@ -21,17 +35,24 @@ export default function ContactForm() {
 
   async function onSubmit(values) {
     setStatus('idle')
+
+    // Abre o WhatsApp primeiro (ainda dentro do gesto de clique do usuário),
+    // antes de qualquer await — navegadores bloqueiam window.open() como pop-up
+    // se ele ocorrer depois de uma Promise resolvida.
+    window.open(whatsappLink(buildWhatsappMessage(values)), '_blank', 'noopener,noreferrer')
+
     try {
       await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({ 'form-name': 'orcamento', ...values }),
       })
-      setStatus('success')
-      reset()
     } catch {
-      setStatus('error')
+      // Netlify Forms é só um registro secundário do lead — o WhatsApp já foi aberto acima.
     }
+
+    setStatus('success')
+    reset()
   }
 
   return (
@@ -137,12 +158,8 @@ export default function ContactForm() {
 
       {status === 'success' && (
         <p className="flex items-center gap-2 rounded-xl bg-emerald-500/10 px-4 py-3 text-sm text-emerald-600 dark:text-emerald-400">
-          <CheckCircle2 className="size-4 shrink-0" /> Mensagem enviada! Em breve entraremos em contato.
-        </p>
-      )}
-      {status === 'error' && (
-        <p className="flex items-center gap-2 rounded-xl bg-red-500/10 px-4 py-3 text-sm text-red-600 dark:text-red-400">
-          <AlertCircle className="size-4 shrink-0" /> Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.
+          <CheckCircle2 className="size-4 shrink-0" /> Abrimos o WhatsApp com sua mensagem pronta — é só enviar por lá. Se
+          não abriu automaticamente, seu navegador pode ter bloqueado o pop-up.
         </p>
       )}
     </form>
