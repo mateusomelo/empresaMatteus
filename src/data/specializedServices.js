@@ -1,0 +1,56 @@
+import {
+  ClipboardList,
+  PhoneCall,
+  Cable,
+  MoveHorizontal,
+  Camera,
+  Plug,
+  BadgeCheck,
+  Router,
+  Settings2,
+  Wifi,
+  Rows3,
+  Network,
+  MonitorPlay,
+  Siren,
+  FileCheck,
+  ShieldAlert,
+  Users,
+} from 'lucide-react'
+
+export const specializedServices = [
+  { id: 'visita-tecnica', label: 'Visita técnica', icon: ClipboardList },
+  { id: 'reparo-cabos-telefonia', label: 'Reparo de cabos de telefonia/interfone', icon: PhoneCall },
+  { id: 'troca-trechos-cabos', label: 'Troca de trechos de cabos', icon: Cable },
+  { id: 'passagem-de-cabos', label: 'Passagem de cabos', icon: MoveHorizontal },
+  { id: 'instalacao-cameras', label: 'Instalação de câmeras (com e sem cabeamento)', icon: Camera },
+  { id: 'crimpagem-rj45', label: 'Crimpagem de cabos RJ45', icon: Plug },
+  { id: 'certificacao-testes-rede', label: 'Certificação e testes de pontos de rede', icon: BadgeCheck },
+  { id: 'instalacao-switches-roteadores', label: 'Instalação de switches e roteadores', icon: Router },
+  {
+    id: 'configuracao-avancada-roteadores',
+    label: 'Configuração avançada de roteadores (VLAN, VPN, Firewall)',
+    icon: Settings2,
+  },
+  { id: 'instalacao-access-points', label: 'Instalação de Access Points', icon: Wifi },
+  { id: 'organizacao-de-racks', label: 'Organização de racks', icon: Rows3 },
+  { id: 'lancamento-cabos-rede', label: 'Lançamento de cabos de rede', icon: Network },
+  { id: 'configuracao-dvr-nvr', label: 'Configuração de DVR e NVR', icon: MonitorPlay },
+  {
+    id: 'atendimento-emergencial',
+    label: 'Atendimento emergencial (24/7, mediante disponibilidade)',
+    icon: Siren,
+  },
+]
+
+export const operationalDifferentials = [
+  { id: 'nota-fiscal', label: 'Atendimento com emissão de Nota Fiscal', icon: FileCheck },
+  { id: 'orcamento-transparente', label: 'Orçamento transparente', icon: ClipboardList },
+  { id: 'diagnostico-tecnico', label: 'Diagnóstico técnico', icon: ShieldAlert },
+  { id: 'atendimento-programado-emergencial', label: 'Atendimento programado e emergencial', icon: Siren },
+  { id: 'materiais-qualidade', label: 'Materiais e equipamentos de qualidade', icon: BadgeCheck },
+  { id: 'garantia-servico', label: 'Garantia conforme o serviço executado', icon: FileCheck },
+  { id: 'pf-pj', label: 'Atendimento para pessoas físicas e empresas', icon: Users },
+  { id: 'suporte-pos-venda', label: 'Suporte pós-venda', icon: PhoneCall },
+  { id: 'solucoes-personalizadas', label: 'Soluções personalizadas para cada cliente', icon: Settings2 },
+]

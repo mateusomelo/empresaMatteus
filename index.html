@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+    <meta name="theme-color" content="#040711" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#040711" media="(prefers-color-scheme: light)" />
+
+    <!-- Título e descrição padrão (sobrescritos por página via react-helmet-async) -->
+    <title>Matteus Oliveira de Melo | Infraestrutura de TI, Redes, CFTV, Automação e Software</title>
+    <meta
+      name="description"
+      content="Soluções completas em tecnologia para empresas e residências: infraestrutura de TI, redes corporativas, datacenter, telefonia, CFTV, controle de acesso, automação e desenvolvimento de sistemas e sites."
+    />
+    <meta name="author" content="Matteus Oliveira de Melo" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://www.matteustecnologia.com.br/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Matteus Oliveira de Melo" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Matteus Oliveira de Melo | Tecnologia que impulsiona empresas" />
+    <meta
+      property="og:description"
+      content="Infraestrutura de TI, Redes Corporativas, Datacenter, Telefonia, CFTV, Controle de Acesso, Automação e Desenvolvimento de Sistemas e Sites Profissionais."
+    />
+    <meta property="og:url" content="https://www.matteustecnologia.com.br/" />
+    <meta property="og:image" content="https://www.matteustecnologia.com.br/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Matteus Oliveira de Melo | Tecnologia que impulsiona empresas" />
+    <meta
+      name="twitter:description"
+      content="Infraestrutura de TI, Redes, Datacenter, Telefonia, CFTV, Controle de Acesso, Automação e Desenvolvimento de Sistemas e Sites."
+    />
+    <meta name="twitter:image" content="https://www.matteustecnologia.com.br/og-cover.png" />
+
+    <!-- Evita flash de tema errado: aplica a classe "dark" antes do primeiro paint -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var isDark = stored ? stored === 'dark' : prefersDark;
+          document.documentElement.classList.toggle('dark', isDark);
+        } catch (e) {
+          /* localStorage indisponível (modo privado/restrito): mantém tema claro padrão */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!--
+      Formulário estático "espelho" para o Netlify Forms.
+      O Netlify varre o HTML publicado em busca de <form data-netlify="true">
+      no momento do deploy; como o formulário real é renderizado via React,
+      este espelho oculto garante que o Netlify registre os campos corretos.
+      Mantenha os atributos "name" sincronizados com src/components/Contact/ContactForm.jsx.
+    -->
+    <form name="orcamento" data-netlify="true" data-netlify-honeypot="empresa-site" hidden>
+      <input type="text" name="nome" />
+      <input type="email" name="email" />
+      <input type="tel" name="telefone" />
+      <input type="text" name="servico" />
+      <textarea name="mensagem"></textarea>
+      <input type="text" name="empresa-site" />
+    </form>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
