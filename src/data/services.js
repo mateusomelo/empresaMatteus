@@ -13,8 +13,18 @@ import {
   AppWindow,
   CloudUpload,
   Headset,
+  Droplet,
+  PaintRoller,
+  Lightbulb,
+  HardHat,
 } from 'lucide-react'
 
+/**
+ * Serviços sem "contactChannel" usam o WhatsApp/e-mail de tecnologia
+ * (company.whatsappNumber/email) por padrão. Os marcados com
+ * contactChannel: 'general' usam o contato de Soluções Completas
+ * (company.whatsappGeneralNumber/generalEmail) — ver src/data/company.js.
+ */
 export const services = [
   {
     id: 'infraestrutura-ti',
@@ -114,5 +124,37 @@ export const services = [
     icon: Headset,
     description: 'Atendimento remoto e presencial, com manutenção preventiva, corretiva e contratos mensais.',
     highlights: ['Atendimento remoto e presencial', 'Manutenção preventiva/corretiva', 'Contratos mensais'],
+  },
+  {
+    id: 'encanador',
+    title: 'Encanador',
+    icon: Droplet,
+    description: 'Reparos, instalações hidráulicas e caça-vazamento com tecnologia para residências e empresas.',
+    highlights: ['Instalações hidráulicas', 'Reparos em tubos e registros', 'Caça-vazamento com tecnologia'],
+    contactChannel: 'general',
+  },
+  {
+    id: 'pintor-profissional',
+    title: 'Pintor Profissional',
+    icon: PaintRoller,
+    description: 'Pintura lisa, grafiato e acabamento fino para deixar qualquer ambiente com cara de novo.',
+    highlights: ['Pintura lisa', 'Grafiato', 'Tira grafiato', 'Acabamento fino e profissional'],
+    contactChannel: 'general',
+  },
+  {
+    id: 'eletricista',
+    title: 'Eletricista',
+    icon: Lightbulb,
+    description: 'Instalação de quadros, infraestrutura elétrica nova e tomadas inteligentes com segurança.',
+    highlights: ['Instalação de quadros', 'Infraestrutura elétrica nova', 'Tomadas inteligentes'],
+    contactChannel: 'general',
+  },
+  {
+    id: 'reformas-em-geral',
+    title: 'Reformas em Geral',
+    icon: HardHat,
+    description: 'Soluções completas de reforma para residências, escritórios, salas comerciais e apartamentos.',
+    highlights: ['Residências', 'Escritórios', 'Salas comerciais', 'Apartamentos'],
+    contactChannel: 'general',
   },
 ]

@@ -8,6 +8,10 @@ import {
   Code2,
   Database,
   LayoutDashboard,
+  Droplet,
+  PaintRoller,
+  Lightbulb,
+  HardHat,
 } from 'lucide-react'
 
 export const infrastructureExperience = [
@@ -96,6 +100,33 @@ export const infrastructureExperience = [
     title: 'Fibra Óptica',
     icon: Cable,
     skills: ['Lançamento', 'Fusão', 'Conectorização', 'Organização', 'Testes'],
+  },
+]
+
+export const generalServicesExperience = [
+  {
+    id: 'hidraulica',
+    title: 'Hidráulica',
+    icon: Droplet,
+    skills: ['Instalações hidráulicas', 'Reparos em tubos e registros', 'Caça-vazamento com tecnologia'],
+  },
+  {
+    id: 'pintura',
+    title: 'Pintura',
+    icon: PaintRoller,
+    skills: ['Pintura lisa', 'Grafiato', 'Tira grafiato', 'Acabamento fino e profissional'],
+  },
+  {
+    id: 'eletrica',
+    title: 'Elétrica',
+    icon: Lightbulb,
+    skills: ['Instalação de quadros', 'Infraestrutura elétrica nova', 'Tomadas inteligentes', 'Instalações elétricas em geral'],
+  },
+  {
+    id: 'reformas',
+    title: 'Reformas',
+    icon: HardHat,
+    skills: ['Reformas residenciais', 'Reformas comerciais', 'Salas comerciais', 'Apartamentos'],
   },
 ]
 

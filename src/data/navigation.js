@@ -26,6 +26,8 @@ export const footerColumns = [
       { label: 'CFTV e monitoramento', href: '#servicos' },
       { label: 'Automação residencial', href: '#servicos' },
       { label: 'Desenvolvimento de sistemas', href: '#servicos' },
+      { label: 'Encanador, pintor e eletricista', href: '#servicos' },
+      { label: 'Reformas em geral', href: '#servicos' },
     ],
   },
   {

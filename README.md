@@ -60,9 +60,9 @@ Todo o conteúdo (serviços, experiência, diferenciais, FAQ, portfólio etc.) f
 
 Como os dados reais da empresa não foram fornecidos no momento da geração do projeto, os seguintes pontos usam valores de exemplo e **precisam ser conferidos/atualizados antes do lançamento**:
 
-1. **`src/data/company.js`** — arquivo único com todos os dados de contato:
-   - `whatsappNumber` / `whatsappDisplay`: **já são reais** (`5511985996532` / `(11) 98599-6532`), usados tanto no botão flutuante e nos CTAs quanto no redirecionamento automático do formulário de orçamento (veja seção "Formulário → WhatsApp" abaixo).
-   - `email`: `contato@matteustecnologia.com.br` — ainda é exemplo, troque para o e-mail real.
+1. **`src/data/company.js`** — arquivo único com todos os dados de contato. O site atende duas frentes, cada uma com WhatsApp e e-mail próprios (**ambos já são reais**):
+   - **Tecnologia** (marca "Matteus Oliveira de Melo"): `whatsappNumber` `5511985996532` / `whatsappDisplay` `(11) 98599-6532` / `email` `matteusoliveirati@gmail.com`. Usado no botão flutuante, nos CTAs gerais e como padrão do formulário.
+   - **Serviços residenciais** (marca "Soluções Completas" — Encanador, Pintor, Eletricista, Reformas): `whatsappGeneralNumber` `5511983954984` / `whatsappGeneralDisplay` `(11) 98395-4984` / `generalEmail` `solucaaocompleta.servicos@gmail.com`.
    - `siteUrl`: domínio de exemplo — troque para o domínio definitivo.
    - `documentId`: `65.123.179` foi o identificador informado, mas um CNPJ completo tem 14 dígitos (`XX.XXX.XXX/0001-XX`). Confirme/complete antes de exibir publicamente.
    - `city`/`state`: preenchidos como "São Paulo/SP" a partir do DDD 11 do WhatsApp — corrija se a cidade real for outra.
@@ -76,13 +76,14 @@ Como os dados reais da empresa não foram fornecidos no momento da geração do 
 
 A arte de marca real (o "MM" metálico com câmera/RJ45, fornecida pelo cliente) está em `src/assets/logos/matteus-brand.webp` e aparece em destaque na seção **Sobre** (`src/components/About/About.jsx`). A navbar e o rodapé continuam usando um monograma "M" em SVG (`src/components/Common/Logo.jsx`) porque a arte completa é muito detalhada para caber legível numa logo compacta de cabeçalho — se preferir usar um recorte dela ali também, edite `Logo.jsx`.
 
-## Formulário → WhatsApp
+## Formulário → WhatsApp (com roteamento por serviço)
 
 Ao enviar o formulário de orçamento (`#contato`), o site:
-1. Abre automaticamente o WhatsApp (`https://wa.me/5511985996532`) em uma nova aba, com uma mensagem já preenchida com nome, telefone, e-mail, serviço de interesse e a mensagem digitada — mesmo comportamento usado em outros sites do cliente.
-2. Em paralelo, também registra o envio no Netlify Forms (histórico de leads no painel da Netlify), sem bloquear o redirecionamento caso essa etapa falhe.
+1. Abre automaticamente o WhatsApp em uma nova aba, com uma mensagem já preenchida com nome, telefone, e-mail, serviço de interesse e a mensagem digitada — mesmo comportamento usado em outros sites do cliente.
+2. **Escolhe o número certo automaticamente** de acordo com o serviço selecionado no campo "Serviço de interesse": serviços com `contactChannel: 'general'` em `src/data/services.js` (Encanador, Pintor Profissional, Eletricista, Reformas em Geral) vão para o WhatsApp de Soluções Completas; todos os demais (TI, redes, CFTV, automação, desenvolvimento etc.) vão para o WhatsApp de tecnologia. A lógica está em `whatsappNumberForService()` dentro de `src/components/Contact/ContactForm.jsx`.
+3. Em paralelo, também registra o envio no Netlify Forms (histórico de leads no painel da Netlify), sem bloquear o redirecionamento caso essa etapa falhe.
 
-Para trocar o número de destino, edite apenas `whatsappNumber` em `src/data/company.js`.
+Para adicionar um novo serviço que deva usar o WhatsApp de Soluções Completas, basta incluir `contactChannel: 'general'` no objeto correspondente em `src/data/services.js` — nenhum outro arquivo precisa ser tocado.
 
 Nenhum desses pontos impede o `npm install`/`npm run dev`/`npm run build` — o site funciona 100% mesmo sem essas trocas, mas exibirá os dados de exemplo até serem atualizados.
 

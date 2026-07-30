@@ -1,15 +1,20 @@
 /**
  * Dados centrais da empresa/marca.
  *
+ * A empresa atende duas frentes com contatos próprios:
+ * - "tech": Infraestrutura de TI, Redes, CFTV, Automação, Telefonia, Fibra
+ *   Óptica, Desenvolvimento de Sistemas/Sites (marca "Matteus Oliveira de Melo").
+ * - "general": Encanador, Pintor, Eletricista e Reformas em Geral (marca
+ *   "Soluções Completas").
+ * O formulário de orçamento escolhe automaticamente o WhatsApp certo com
+ * base no serviço selecionado (veja src/data/services.js: contactChannel).
+ *
  * IMPORTANTE — ANTES DE PUBLICAR:
  * Os campos marcados com "// SUBSTITUIR" abaixo ainda contêm valores de
- * exemplo (e-mail, domínio e redes sociais) porque não foram fornecidos os
- * dados reais. Troque-os aqui — é o único lugar do projeto onde eles são
+ * exemplo (domínio e redes sociais) porque não foram fornecidos os dados
+ * reais. Troque-os aqui — é o único lugar do projeto onde eles são
  * definidos, todo o site consome a partir daqui.
  */
-
-const WHATSAPP_NUMBER = '5511985996532'
-const IS_PLACEHOLDER_WHATSAPP = WHATSAPP_NUMBER === '5565912345678'
 
 export const company = {
   legalName: 'Matteus Oliveira de Melo',
@@ -19,9 +24,16 @@ export const company = {
   documentId: '65.123.179', // Identificador informado (raiz de CNPJ) — confirmar/completar os 14 dígitos antes de publicar
   foundingYear: 2018,
 
-  email: 'contato@matteustecnologia.com.br', // SUBSTITUIR: e-mail real de contato
-  whatsappNumber: WHATSAPP_NUMBER,
+  // Tecnologia: TI, Redes, CFTV, Automação, Telefonia, Fibra, Sistemas e Sites
+  email: 'matteusoliveirati@gmail.com',
+  whatsappNumber: '5511985996532',
   whatsappDisplay: '(11) 98599-6532',
+
+  // Serviços residenciais/prediais: Encanador, Pintor, Eletricista, Reformas
+  generalServicesBrand: 'Soluções Completas',
+  generalEmail: 'solucaaocompleta.servicos@gmail.com',
+  whatsappGeneralNumber: '5511983954984',
+  whatsappGeneralDisplay: '(11) 98395-4984',
 
   city: 'São Paulo', // Inferido do DDD 11 do WhatsApp — corrija se não for a cidade correta
   state: 'SP',
@@ -37,17 +49,10 @@ export const company = {
   },
 }
 
-export function whatsappLink(message) {
-  const base = `https://wa.me/${company.whatsappNumber}`
+export function whatsappLink(message, number = company.whatsappNumber) {
+  const base = `https://wa.me/${number}`
   return message ? `${base}?text=${encodeURIComponent(message)}` : base
 }
 
 export const defaultWhatsappMessage =
   'Olá! Vim pelo site e gostaria de solicitar um orçamento sem compromisso.'
-
-if (import.meta.env.DEV && IS_PLACEHOLDER_WHATSAPP) {
-  // eslint-disable-next-line no-console
-  console.warn(
-    '[matteus-tecnologia] O número de WhatsApp em src/data/company.js ainda é um valor de exemplo. Atualize antes de publicar o site.',
-  )
-}

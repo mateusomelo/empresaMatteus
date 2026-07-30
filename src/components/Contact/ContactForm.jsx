@@ -3,7 +3,14 @@ import { useForm } from 'react-hook-form'
 import { Send, CheckCircle2 } from 'lucide-react'
 import Button from '../Common/Button.jsx'
 import { services } from '../../data/services.js'
-import { whatsappLink } from '../../data/company.js'
+import { company, whatsappLink } from '../../data/company.js'
+
+const contactChannelByService = new Map(services.map((service) => [service.title, service.contactChannel ?? 'tech']))
+
+function whatsappNumberForService(serviceTitle) {
+  const channel = contactChannelByService.get(serviceTitle) ?? 'tech'
+  return channel === 'general' ? company.whatsappGeneralNumber : company.whatsappNumber
+}
 
 function encode(data) {
   return Object.keys(data)
@@ -38,8 +45,10 @@ export default function ContactForm() {
 
     // Abre o WhatsApp primeiro (ainda dentro do gesto de clique do usuário),
     // antes de qualquer await — navegadores bloqueiam window.open() como pop-up
-    // se ele ocorrer depois de uma Promise resolvida.
-    window.open(whatsappLink(buildWhatsappMessage(values)), '_blank', 'noopener,noreferrer')
+    // se ele ocorrer depois de uma Promise resolvida. O número escolhido depende
+    // do serviço selecionado: tecnologia ou serviços residenciais (Soluções Completas).
+    const number = whatsappNumberForService(values.servico)
+    window.open(whatsappLink(buildWhatsappMessage(values), number), '_blank', 'noopener,noreferrer')
 
     try {
       await fetch('/', {
