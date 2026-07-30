@@ -1,34 +1,19 @@
 import clsx from 'clsx'
 import { company } from '../../data/company.js'
+import markImage from '../../assets/logos/matteus-mark.webp'
 
 function Monogram({ size = 'md' }) {
   const dimensions = size === 'sm' ? 'size-9' : 'size-11'
 
   return (
-    <span className={clsx('relative inline-flex shrink-0 items-center justify-center', dimensions)}>
-      <span className="absolute inset-0 rounded-2xl bg-gradient-to-br from-ink-900 via-ink-800 to-neon-600 shadow-glow" />
+    <span className={clsx('relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-ink-950 shadow-glow', dimensions)}>
       <span className="absolute -inset-[3px] rounded-[1.1rem] border border-neon-400/30" aria-hidden="true" />
-      <svg viewBox="0 0 24 24" className="relative size-[55%] text-white" fill="none" aria-hidden="true">
-        <path
-          d="M3 19V5.6c0-.9 1.1-1.35 1.74-.71L12 12.15l7.26-7.26c.64-.64 1.74-.19 1.74.71V19"
-          stroke="currentColor"
-          strokeWidth="2.1"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M12 12.15V19"
-          stroke="url(#logo-gradient)"
-          strokeWidth="2.1"
-          strokeLinecap="round"
-        />
-        <defs>
-          <linearGradient id="logo-gradient" x1="12" y1="12" x2="12" y2="19" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#4F8BFF" />
-            <stop offset="1" stopColor="#38E8FF" />
-          </linearGradient>
-        </defs>
-      </svg>
+      <img
+        src={markImage}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 size-full scale-125 object-cover"
+      />
     </span>
   )
 }
