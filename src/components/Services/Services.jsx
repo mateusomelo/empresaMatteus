@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, A11y } from 'swiper/modules'
+import { Navigation, Pagination, Autoplay, A11y } from 'swiper/modules'
 import Container from '../Common/Container.jsx'
 import SectionHeading from '../Common/SectionHeading.jsx'
 import Reveal from '../Common/Reveal.jsx'
@@ -22,7 +22,7 @@ export default function Services() {
 
         <Reveal delay={0.1}>
           <Swiper
-            modules={[Navigation, Pagination, A11y]}
+            modules={[Navigation, Pagination, Autoplay, A11y]}
             slidesPerView={1.05}
             spaceBetween={20}
             breakpoints={{
@@ -31,6 +31,8 @@ export default function Services() {
             }}
             navigation
             pagination={{ clickable: true }}
+            autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+            loop
             className="!px-1 !pb-12 !pt-2 mt-16"
           >
             {services.map((service) => (
