@@ -1,7 +1,15 @@
+import { Server, HardHat, Code2, UserCheck } from 'lucide-react'
 import Container from '../Common/Container.jsx'
 import SectionHeading from '../Common/SectionHeading.jsx'
 import Reveal from '../Common/Reveal.jsx'
-import brandLogo from '../../assets/logos/matteus-brand.webp'
+import GlassCard from '../Common/GlassCard.jsx'
+
+const pillars = [
+  { icon: Server, label: 'Infraestrutura & Redes' },
+  { icon: HardHat, label: 'Serviços Residenciais' },
+  { icon: Code2, label: 'Desenvolvimento de Software' },
+  { icon: UserCheck, label: 'Atendimento Personalizado' },
+]
 
 export default function About() {
   return (
@@ -14,17 +22,18 @@ export default function About() {
             <Reveal delay={0.15}>
               <div className="mt-6 space-y-5 text-base leading-relaxed text-graphite-500 dark:text-graphite-300">
                 <p>
-                  Nossa empresa nasceu com o propósito de entregar soluções tecnológicas completas para empresas e
-                  clientes residenciais.
+                  Nossa empresa nasceu com o propósito de entregar soluções completas para empresas e clientes
+                  residenciais, unindo tecnologia e serviços do dia a dia em um único contato de confiança.
                 </p>
                 <p>
-                  Atuamos em diversas áreas da tecnologia, oferecendo desde infraestrutura física até desenvolvimento
-                  de software, sempre utilizando equipamentos de qualidade, boas práticas do mercado e atendimento
-                  personalizado.
+                  Na área de tecnologia, atuamos em infraestrutura de TI, redes corporativas, CFTV, controle de
+                  acesso, automação residencial e comercial, telefonia e desenvolvimento de sistemas e sites,
+                  sempre com equipamentos de qualidade e boas práticas do mercado.
                 </p>
                 <p>
-                  Também resolvemos o dia a dia da sua casa ou empresa com a linha Soluções Completas: encanador,
-                  pintor, eletricista e reformas em geral — tudo com a mesma equipe de confiança.
+                  Com a linha Soluções Completas, também cuidamos do dia a dia da sua casa ou empresa: encanador,
+                  pintor, eletricista e reformas em geral para residências, escritórios, salas comerciais e
+                  apartamentos — com o mesmo padrão de qualidade e a mesma equipe de confiança.
                 </p>
                 <p>
                   Nosso compromisso é entregar projetos seguros, organizados, modernos e eficientes, proporcionando
@@ -36,16 +45,15 @@ export default function About() {
           </div>
 
           <Reveal direction="left" delay={0.1}>
-            <div className="relative overflow-hidden rounded-3xl border border-graphite-100 bg-ink-950 p-2 shadow-xl shadow-ink-950/10 dark:border-white/10">
-              <div className="pointer-events-none absolute -inset-10 -z-10 rounded-full bg-neon-500/20 blur-[100px]" />
-              <img
-                src={brandLogo}
-                alt="Matteus Oliveira de Melo — CFTV, Redes, Telefonia, Automação Residencial, Controle de Acesso e Infraestrutura de Cabeamento"
-                loading="lazy"
-                width={1200}
-                height={800}
-                className="w-full rounded-2xl"
-              />
+            <div className="grid grid-cols-2 gap-4">
+              {pillars.map(({ icon: Icon, label }, index) => (
+                <GlassCard key={label} className={index % 2 === 1 ? 'translate-y-6 p-6' : 'p-6'}>
+                  <span className="inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-neon-500/15 to-cyan-glow/10 text-neon-500 dark:text-neon-300">
+                    <Icon className="size-6" />
+                  </span>
+                  <p className="mt-4 text-sm font-semibold text-ink-950 dark:text-white">{label}</p>
+                </GlassCard>
+              ))}
             </div>
           </Reveal>
         </div>
