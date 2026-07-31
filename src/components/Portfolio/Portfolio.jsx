@@ -1,10 +1,16 @@
 import { useMemo, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, A11y } from 'swiper/modules'
 import Container from '../Common/Container.jsx'
 import SectionHeading from '../Common/SectionHeading.jsx'
+import Reveal from '../Common/Reveal.jsx'
 import PortfolioFilters from './PortfolioFilters.jsx'
 import PortfolioCard from './PortfolioCard.jsx'
 import { portfolioCategories, portfolioItems } from '../../data/portfolio.js'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('todos')
@@ -27,13 +33,30 @@ export default function Portfolio() {
           <PortfolioFilters categories={portfolioCategories} active={activeCategory} onChange={setActiveCategory} />
         </div>
 
-        <motion.div layout className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
+        <Reveal delay={0.1}>
+          <Swiper
+            // A troca de categoria muda drasticamente o conjunto de slides;
+            // remontar via key evita estados internos "presos" do Swiper
+            // (índice, paginação) de uma lista de tamanho diferente.
+            key={activeCategory}
+            modules={[Navigation, Pagination, A11y]}
+            slidesPerView={1.05}
+            spaceBetween={20}
+            breakpoints={{
+              640: { slidesPerView: 2, spaceBetween: 24 },
+              1024: { slidesPerView: 3, spaceBetween: 24 },
+            }}
+            navigation
+            pagination={{ clickable: true }}
+            className="!px-1 !pb-12 !pt-2 mt-10"
+          >
             {filteredItems.map((item) => (
-              <PortfolioCard key={item.id} item={item} />
+              <SwiperSlide key={item.id} className="h-auto pb-2">
+                <PortfolioCard item={item} />
+              </SwiperSlide>
             ))}
-          </AnimatePresence>
-        </motion.div>
+          </Swiper>
+        </Reveal>
       </Container>
     </section>
   )

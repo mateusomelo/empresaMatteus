@@ -1,6 +1,6 @@
-# Matteus Oliveira de Melo — Site Institucional
+# Matteus Soluções Completas — Site Institucional
 
-Site institucional em React (SPA) para tecnologia — infraestrutura de TI, redes, CFTV, automação, telefonia e desenvolvimento de sistemas/sites. 100% front-end, pronto para hospedagem estática na Netlify.
+Site institucional em React (SPA) para duas frentes de negócio sob uma marca só: **tecnologia** (infraestrutura de TI, redes, CFTV, automação, telefonia, desenvolvimento de sistemas/sites) e **serviços residenciais** (encanador, pintor, eletricista, reformas em geral). 100% front-end, pronto para hospedagem estática na Netlify.
 
 ## Stack
 
@@ -11,7 +11,7 @@ Site institucional em React (SPA) para tecnologia — infraestrutura de TI, rede
 - Framer Motion (animações e scroll reveal)
 - Lucide React (ícones)
 - React Helmet Async (SEO)
-- Swiper (carrossel de depoimentos)
+- Swiper (carrosséis de Serviços, Portfólio e Depoimentos)
 - React Hook Form (formulário de orçamento, integrado ao Netlify Forms)
 
 Sem backend, sem banco de dados, sem SSR — apenas front-end estático.
@@ -60,21 +60,26 @@ Todo o conteúdo (serviços, experiência, diferenciais, FAQ, portfólio etc.) f
 
 Como os dados reais da empresa não foram fornecidos no momento da geração do projeto, os seguintes pontos usam valores de exemplo e **precisam ser conferidos/atualizados antes do lançamento**:
 
-1. **`src/data/company.js`** — arquivo único com todos os dados de contato. O site atende duas frentes, cada uma com WhatsApp e e-mail próprios (**ambos já são reais**):
-   - **Tecnologia** (marca "Matteus Oliveira de Melo"): `whatsappNumber` `5511985996532` / `whatsappDisplay` `(11) 98599-6532` / `email` `matteusoliveirati@gmail.com`. Usado no botão flutuante, nos CTAs gerais e como padrão do formulário.
-   - **Serviços residenciais** (marca "Soluções Completas" — Encanador, Pintor, Eletricista, Reformas): `whatsappGeneralNumber` `5511983954984` / `whatsappGeneralDisplay` `(11) 98395-4984` / `generalEmail` `solucaaocompleta.servicos@gmail.com`.
+1. **`src/data/company.js`** — arquivo único com todos os dados de contato. O site atende duas frentes sob a marca única "Matteus Soluções Completas" (`brandName`), cada frente com WhatsApp e e-mail próprios (**ambos já são reais**):
+   - **Tecnologia**: `whatsappNumber` `5511985996532` / `whatsappDisplay` `(11) 98599-6532` / `email` `matteusoliveirati@gmail.com`. Usado no botão flutuante, nos CTAs gerais e como padrão do formulário.
+   - **Serviços residenciais** (Encanador, Pintor, Eletricista, Reformas): `whatsappGeneralNumber` `5511983954984` / `whatsappGeneralDisplay` `(11) 98395-4984` / `generalEmail` `solucaaocompleta.servicos@gmail.com`.
+   - `legalName` continua `Matteus Oliveira de Melo` (nome pessoal/CNPJ, usado só no copyright do rodapé); `brandName`/`shortName`/`brandSubtitle` é o que aparece publicamente (título da página, navbar, schema.org).
    - `siteUrl`: domínio de exemplo — troque para o domínio definitivo.
    - `documentId`: `65.123.179` foi o identificador informado, mas um CNPJ completo tem 14 dígitos (`XX.XXX.XXX/0001-XX`). Confirme/complete antes de exibir publicamente.
    - `city`/`state`: preenchidos como "São Paulo/SP" a partir do DDD 11 do WhatsApp — corrija se a cidade real for outra.
    - `social.linkedin` / `social.github`: estão `null` de propósito — os ícones correspondentes só aparecem no rodapé quando você preencher uma URL real.
-2. **Domínio nos arquivos estáticos**: `index.html` (canonical, Open Graph, Twitter Card), `public/robots.txt` e `public/sitemap.xml` usam o mesmo domínio de exemplo — troque todas as ocorrências de `matteustecnologia.com.br` pelo domínio real.
+2. **Domínio nos arquivos estáticos**: `index.html` (canonical, Open Graph, Twitter Card), `public/robots.txt` e `public/sitemap.xml` usam o mesmo domínio de exemplo — troque todas as ocorrências de `matteussolucoes.com.br` pelo domínio real.
 3. **Portfólio** (`src/data/portfolio.js`): cada item tem `image: null` — os cards mostram um ícone/gradiente de categoria enquanto isso. Para adicionar fotos reais, salve os arquivos (formato `.webp`) em `src/assets/images/portfolio/`, importe-os no arquivo de dados e preencha `image`, `projectUrl` e `githubUrl` conforme aplicável.
 4. **Depoimentos** (`src/data/testimonials.js`): propositalmente vazio — nenhum depoimento fictício foi criado. Assim que houver avaliações reais de clientes, adicione-as nesse array no formato indicado no próprio arquivo e o carrossel passa a exibi-las automaticamente.
 5. **`public/og-cover.png`**: imagem de compartilhamento (Open Graph/Twitter) gerada automaticamente a partir de `scripts/generate-og-image.mjs`. Rode `npm run generate:og` novamente sempre que atualizar nome, tagline ou domínio em `company.js`.
 
 ## Logo
 
-A arte de marca real (o "MM" metálico com câmera/RJ45, fornecida pelo cliente) está em `src/assets/logos/matteus-brand.webp` e aparece em destaque na seção **Sobre** (`src/components/About/About.jsx`). A navbar e o rodapé continuam usando um monograma "M" em SVG (`src/components/Common/Logo.jsx`) porque a arte completa é muito detalhada para caber legível numa logo compacta de cabeçalho — se preferir usar um recorte dela ali também, edite `Logo.jsx`.
+A arte de marca real (o "MM" metálico com câmera/RJ45, fornecida pelo cliente) está em `src/assets/logos/matteus-brand.webp` e aparece em destaque na seção **Sobre** (`src/components/About/About.jsx`). A navbar e o rodapé usam um monograma "M" em SVG (`src/components/Common/Logo.jsx`) com o subtítulo "SOLUÇÕES COMPLETAS" (`company.brandSubtitle`) — a arte completa não foi usada aí porque é detalhada demais para caber legível numa logo compacta de cabeçalho.
+
+## Carrosséis (Serviços e Portfólio)
+
+As seções de **Serviços** (`src/components/Services/Services.jsx`) e **Portfólio** (`src/components/Portfolio/Portfolio.jsx`) usam Swiper com a navegação nativa (setas `navigation` + bolinhas `pagination`, sem refs manuais) para não deixar a página excessivamente longa com muitos cards. Estilo das setas/bolinhas fica centralizado em `src/index.css` (`.swiper-button-prev/next`, `.swiper-pagination-bullet`) — qualquer novo carrossel adicionado ao site herda o mesmo visual automaticamente. O Portfólio remonta o Swiper (`key={activeCategory}`) a cada troca de filtro para evitar estado interno "preso" de uma lista de tamanho diferente.
 
 ## Formulário → WhatsApp (com roteamento por serviço)
 

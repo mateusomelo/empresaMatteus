@@ -22,8 +22,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Tecnologia que impulsiona empresas"
-        description="Infraestrutura de TI, Redes Corporativas, Datacenter, Telefonia, CFTV, Controle de Acesso, Automação Residencial e Comercial, Desenvolvimento de Sistemas e Sites Profissionais."
+        title="Tecnologia e serviços que impulsionam empresas e residências"
+        description="Infraestrutura de TI, Redes Corporativas, CFTV, Automação e Desenvolvimento de Sistemas — além de Encanador, Pintor, Eletricista e Reformas em Geral. Soluções completas em um único contato."
         path="/"
         schema={getLocalBusinessSchema()}
       />

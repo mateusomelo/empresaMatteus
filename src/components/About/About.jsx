@@ -23,6 +23,10 @@ export default function About() {
                   personalizado.
                 </p>
                 <p>
+                  Também resolvemos o dia a dia da sua casa ou empresa com a linha Soluções Completas: encanador,
+                  pintor, eletricista e reformas em geral — tudo com a mesma equipe de confiança.
+                </p>
+                <p>
                   Nosso compromisso é entregar projetos seguros, organizados, modernos e eficientes, proporcionando
                   tranquilidade e alto desempenho para nossos clientes.
                 </p>

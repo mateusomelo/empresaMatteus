@@ -32,7 +32,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-neon-400/30 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-neon-300 backdrop-blur-sm"
           >
             <Sparkles className="size-3.5" />
-            Infraestrutura &bull; Redes &bull; Automação &bull; Software
+            Tecnologia &bull; Elétrica &bull; Hidráulica &bull; Reformas
           </motion.span>
 
           <motion.h1

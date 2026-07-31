@@ -49,7 +49,7 @@ export default function Logo({ variant = 'full', light = false, className }) {
           </span>
           {variant === 'full' && (
             <span className="text-gradient mt-0.5 hidden font-display text-[10px] font-semibold tracking-[0.22em] sm:inline">
-              OLIVEIRA DE MELO
+              {company.brandSubtitle}
             </span>
           )}
         </span>

@@ -49,21 +49,21 @@ const svg = `
   </g>
 
   <text x="184" y="118" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#ffffff">MATTEUS</text>
-  <text x="184" y="148" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="4" fill="url(#accentText)">OLIVEIRA DE MELO</text>
+  <text x="184" y="148" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="4" fill="url(#accentText)">SOLUÇÕES COMPLETAS</text>
 
   <text x="90" y="290" font-family="Arial, sans-serif" font-size="21" font-weight="600" letter-spacing="3" fill="#7fb0ff">
-    INFRAESTRUTURA &#8226; REDES &#8226; AUTOMAÇÃO &#8226; SOFTWARE
+    TECNOLOGIA &#8226; ELÉTRICA &#8226; HIDRÁULICA &#8226; REFORMAS
   </text>
 
-  <text x="88" y="360" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">Tecnologia que</text>
-  <text x="88" y="432" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="url(#accentText)">impulsiona empresas.</text>
+  <text x="88" y="360" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">Tecnologia e serviços</text>
+  <text x="88" y="432" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="url(#accentText)">que resolvem tudo.</text>
 
   <text x="90" y="500" font-family="Arial, sans-serif" font-size="24" fill="#97a0b3">
-    Infraestrutura de TI, Redes, Datacenter, CFTV, Automação e Desenvolvimento de Sistemas.
+    TI, Redes, CFTV e Automação — além de Encanador, Pintor, Eletricista e Reformas.
   </text>
 
   <rect x="88" y="546" width="1024" height="1.5" fill="rgba(255,255,255,0.12)" />
-  <text x="90" y="590" font-family="Arial, sans-serif" font-size="19" fill="#6b7488">www.matteustecnologia.com.br</text>
+  <text x="90" y="590" font-family="Arial, sans-serif" font-size="19" fill="#6b7488">www.matteussolucoes.com.br</text>
 </svg>
 `
 

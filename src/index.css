@@ -152,3 +152,51 @@
     mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   }
 }
+
+/* Carrosséis (Swiper): paginação e setas na identidade da marca */
+.swiper-pagination-bullet {
+  background: var(--color-graphite-300);
+  opacity: 1;
+}
+.dark .swiper-pagination-bullet {
+  background: var(--color-graphite-500);
+}
+.swiper-pagination-bullet-active {
+  background: linear-gradient(to right, var(--color-neon-500), var(--color-cyan-glow));
+  width: 22px;
+  border-radius: 9999px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  --swiper-navigation-size: 16px;
+  width: 44px;
+  height: 44px;
+  background-color: white;
+  border: 1px solid var(--color-graphite-200);
+  border-radius: 9999px;
+  color: var(--color-ink-900);
+  box-shadow: 0 10px 25px -8px rgba(5, 7, 13, 0.25);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.dark .swiper-button-prev,
+.dark .swiper-button-next {
+  background-color: var(--color-ink-800);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  border-color: rgba(47, 107, 255, 0.5);
+  color: var(--color-neon-500);
+}
+.swiper-button-disabled {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+@media (max-width: 1023px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}

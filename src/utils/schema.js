@@ -5,9 +5,10 @@ export function getLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: company.legalName,
+    name: company.brandName,
+    legalName: company.legalName,
     description:
-      'Soluções completas em tecnologia: infraestrutura de TI, redes corporativas, datacenter, telefonia, CFTV, controle de acesso, automação e desenvolvimento de sistemas e sites.',
+      'Soluções completas em tecnologia e serviços: infraestrutura de TI, redes corporativas, CFTV, automação e desenvolvimento de sistemas e sites — além de encanador, pintor, eletricista e reformas em geral.',
     url: company.siteUrl,
     image: `${company.siteUrl}${company.ogImage}`,
     telephone: `+${company.whatsappNumber}`,

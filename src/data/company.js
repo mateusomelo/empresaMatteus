@@ -1,11 +1,11 @@
 /**
  * Dados centrais da empresa/marca.
  *
- * A empresa atende duas frentes com contatos próprios:
+ * Marca única do site: "Matteus Soluções Completas", cobrindo duas frentes
+ * com contatos próprios:
  * - "tech": Infraestrutura de TI, Redes, CFTV, Automação, Telefonia, Fibra
- *   Óptica, Desenvolvimento de Sistemas/Sites (marca "Matteus Oliveira de Melo").
- * - "general": Encanador, Pintor, Eletricista e Reformas em Geral (marca
- *   "Soluções Completas").
+ *   Óptica, Desenvolvimento de Sistemas/Sites.
+ * - "general": Encanador, Pintor, Eletricista e Reformas em Geral.
  * O formulário de orçamento escolhe automaticamente o WhatsApp certo com
  * base no serviço selecionado (veja src/data/services.js: contactChannel).
  *
@@ -18,8 +18,9 @@
 
 export const company = {
   legalName: 'Matteus Oliveira de Melo',
-  brandName: 'Matteus Oliveira de Melo',
+  brandName: 'Matteus Soluções Completas',
   shortName: 'Matteus',
+  brandSubtitle: 'SOLUÇÕES COMPLETAS', // linha pequena da logo (navbar/rodapé), abaixo de "MATTEUS"
   tagline: 'Conectando soluções, garantindo confiança.',
   documentId: '65.123.179', // Identificador informado (raiz de CNPJ) — confirmar/completar os 14 dígitos antes de publicar
   foundingYear: 2018,
@@ -39,7 +40,7 @@ export const company = {
   state: 'SP',
   country: 'Brasil',
 
-  siteUrl: 'https://www.matteustecnologia.com.br', // SUBSTITUIR pelo domínio definitivo
+  siteUrl: 'https://www.matteussolucoes.com.br', // SUBSTITUIR pelo domínio definitivo
   ogImage: '/og-cover.png',
 
   social: {
