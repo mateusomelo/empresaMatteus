@@ -4,7 +4,6 @@ import {
   Fingerprint,
   Home,
   PhoneCall,
-  Cable,
   Code2,
   Database,
   LayoutDashboard,
@@ -94,12 +93,6 @@ export const infrastructureExperience = [
       'Identificação de falhas',
       'Organização',
     ],
-  },
-  {
-    id: 'fibra',
-    title: 'Fibra Óptica',
-    icon: Cable,
-    skills: ['Lançamento', 'Fusão', 'Conectorização', 'Organização', 'Testes'],
   },
 ]
 

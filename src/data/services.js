@@ -2,7 +2,6 @@ import {
   Server,
   Network,
   Cable,
-  Zap,
   Phone,
   Camera,
   Fingerprint,
@@ -47,13 +46,6 @@ export const services = [
     icon: Cable,
     description: 'Infraestrutura de cabeamento organizada, testada e certificada, do ponto de rede ao patch panel.',
     highlights: ['Cat5e / Cat6 / Cat6A', 'Organização', 'Patch Panel', 'Certificação'],
-  },
-  {
-    id: 'fibra-optica',
-    title: 'Fibra Óptica',
-    icon: Zap,
-    description: 'Lançamento, fusão e conectorização de fibra óptica com testes completos de performance.',
-    highlights: ['Lançamento', 'Fusão', 'Conectorização', 'Testes'],
   },
   {
     id: 'telefonia',

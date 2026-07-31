@@ -3,8 +3,8 @@
  *
  * Marca única do site: "Matteus Soluções Completas", cobrindo duas frentes
  * com contatos próprios:
- * - "tech": Infraestrutura de TI, Redes, CFTV, Automação, Telefonia, Fibra
- *   Óptica, Desenvolvimento de Sistemas/Sites.
+ * - "tech": Infraestrutura de TI, Redes, CFTV, Automação, Telefonia,
+ *   Desenvolvimento de Sistemas/Sites.
  * - "general": Encanador, Pintor, Eletricista e Reformas em Geral.
  * O formulário de orçamento escolhe automaticamente o WhatsApp certo com
  * base no serviço selecionado (veja src/data/services.js: contactChannel).
@@ -25,7 +25,7 @@ export const company = {
   documentId: '65.123.179', // Identificador informado (raiz de CNPJ) — confirmar/completar os 14 dígitos antes de publicar
   foundingYear: 2018,
 
-  // Tecnologia: TI, Redes, CFTV, Automação, Telefonia, Fibra, Sistemas e Sites
+  // Tecnologia: TI, Redes, CFTV, Automação, Telefonia, Sistemas e Sites
   email: 'matteusoliveirati@gmail.com',
   whatsappNumber: '5511985996532',
   whatsappDisplay: '(11) 98599-6532',
