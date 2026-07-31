@@ -15,7 +15,19 @@ export const faqItems = [
     id: 'atendem-residencias',
     question: 'Atendem residências?',
     answer:
-      'Sim. Também atendemos clientes residenciais, com serviços de redes, CFTV, automação, telefonia e controle de acesso.',
+      'Sim. Além dos serviços de tecnologia (redes, CFTV, automação, telefonia e controle de acesso), atendemos residências com a linha Soluções Completas: encanador, pintor, eletricista e reformas em geral.',
+  },
+  {
+    id: 'solucoes-completas',
+    question: 'Vocês fazem encanador, pintor, eletricista e reformas?',
+    answer:
+      'Sim. Com a linha Soluções Completas cuidamos do dia a dia da sua casa ou empresa: reparos hidráulicos, pintura, instalações elétricas e reformas completas, com a mesma equipe de confiança da parte de tecnologia.',
+  },
+  {
+    id: 'atendimento-emergencial',
+    question: 'Fazem atendimento emergencial (vazamento, falta de energia)?',
+    answer:
+      'Sim, mediante disponibilidade. Além do atendimento programado, oferecemos suporte emergencial para situações urgentes, como vazamentos, falhas elétricas e problemas de rede ou CFTV.',
   },
   {
     id: 'fazem-manutencao',

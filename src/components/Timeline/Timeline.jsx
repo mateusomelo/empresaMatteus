@@ -14,8 +14,6 @@ export default function Timeline() {
         />
 
         <div className="relative mt-16">
-          <div className="absolute left-5 top-0 hidden h-full w-px bg-gradient-to-b from-neon-500/60 via-graphite-200 to-transparent dark:via-white/10 lg:block" />
-
           <ol className="grid gap-6 lg:grid-cols-3">
             {workflowSteps.map(({ id, title, description, icon: Icon }, index) => (
               <Reveal key={id} delay={(index % 3) * 0.08}>

@@ -5,8 +5,12 @@ import { serviceAreas } from '../../data/serviceAreas.js'
 
 export default function ServiceAreas() {
   return (
-    <section id="areas-atendimento" className="section-padding relative">
-      <Container>
+    <section id="areas-atendimento" className="section-padding relative overflow-hidden">
+      <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-40 dark:opacity-20" />
+      <div className="pointer-events-none absolute -left-24 top-1/2 size-80 -translate-y-1/2 rounded-full bg-neon-500/10 blur-[100px]" />
+      <div className="pointer-events-none absolute -right-24 top-1/4 size-72 rounded-full bg-cyan-glow/10 blur-[100px]" />
+
+      <Container className="relative">
         <SectionHeading
           eyebrow="Onde atuamos"
           title="Áreas de atendimento"
