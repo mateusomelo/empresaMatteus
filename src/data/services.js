@@ -23,6 +23,17 @@ import svcAcesso from '../assets/iso/svc-acesso.jpg'
 import svcAutomacao from '../assets/iso/svc-automacao.jpg'
 import svcEletrica from '../assets/iso/svc-eletrica.jpg'
 import svcDev from '../assets/iso/svc-dev.jpg'
+import svcCorporativa from '../assets/iso/svc-corporativa.jpg'
+import svcCabeamento from '../assets/iso/svc-cabeamento.jpg'
+import svcTelefonia from '../assets/iso/svc-telefonia.jpg'
+import svcWifi from '../assets/iso/svc-wifi.jpg'
+import svcRack from '../assets/iso/svc-rack.jpg'
+import svcSistemas from '../assets/iso/svc-sistemas.jpg'
+import svcCloud from '../assets/iso/svc-cloud.jpg'
+import svcSuporte from '../assets/iso/svc-suporte.jpg'
+import svcHidraulica from '../assets/iso/svc-hidraulica.jpg'
+import svcPintura from '../assets/iso/svc-pintura.jpg'
+import svcReformas from '../assets/iso/svc-reformas.jpg'
 
 /**
  * Serviços sem "contactChannel" usam o WhatsApp/e-mail de tecnologia
@@ -42,6 +53,7 @@ export const services = [
   },
   {
     id: 'redes-corporativas',
+    image: svcCorporativa,
     title: 'Redes Corporativas',
     icon: Network,
     description: 'Projeto, implantação e manutenção de redes de alta disponibilidade.',
@@ -49,6 +61,7 @@ export const services = [
   },
   {
     id: 'cabeamento-estruturado',
+    image: svcCabeamento,
     title: 'Cabeamento Estruturado',
     icon: Cable,
     description: 'Infraestrutura de cabeamento organizada, testada e certificada, do ponto de rede ao patch panel.',
@@ -56,6 +69,7 @@ export const services = [
   },
   {
     id: 'telefonia',
+    image: svcTelefonia,
     title: 'Telefonia',
     icon: Phone,
     description: 'Visita técnica, reparo e manutenção de sistemas de telefonia e interfone.',
@@ -79,6 +93,7 @@ export const services = [
   },
   {
     id: 'redes-wifi',
+    image: svcWifi,
     title: 'Redes Wi-Fi',
     icon: Wifi,
     description: 'Instalação de Access Points e redes mesh com cobertura otimizada para ambientes corporativos.',
@@ -86,6 +101,7 @@ export const services = [
   },
   {
     id: 'organizacao-de-rack',
+    image: svcRack,
     title: 'Organização de Rack',
     icon: Rows3,
     description: 'Padronização, identificação e etiquetagem de racks para operação limpa e sem falhas.',
@@ -109,6 +125,7 @@ export const services = [
   },
   {
     id: 'desenvolvimento-de-sistemas',
+    image: svcSistemas,
     title: 'Desenvolvimento de Sistemas',
     icon: AppWindow,
     description: 'Sistemas personalizados, painéis administrativos e dashboards sob medida.',
@@ -116,6 +133,7 @@ export const services = [
   },
   {
     id: 'hospedagem-e-deploy',
+    image: svcCloud,
     title: 'Hospedagem e Deploy',
     icon: CloudUpload,
     description: 'Hospedagem em VPS, configuração de domínio, SSL e deploy contínuo com monitoramento.',
@@ -123,6 +141,7 @@ export const services = [
   },
   {
     id: 'suporte-tecnico',
+    image: svcSuporte,
     title: 'Suporte Técnico',
     icon: Headset,
     description: 'Atendimento remoto e presencial, com manutenção preventiva, corretiva e contratos mensais.',
@@ -130,6 +149,7 @@ export const services = [
   },
   {
     id: 'encanador',
+    image: svcHidraulica,
     title: 'Encanador',
     icon: Droplet,
     description: 'Reparos, instalações hidráulicas e caça-vazamento com tecnologia para residências e empresas.',
@@ -138,6 +158,7 @@ export const services = [
   },
   {
     id: 'pintor-profissional',
+    image: svcPintura,
     title: 'Pintor Profissional',
     icon: PaintRoller,
     description: 'Pintura lisa, grafiato e acabamento fino para deixar qualquer ambiente com cara de novo.',
@@ -155,6 +176,7 @@ export const services = [
   },
   {
     id: 'reformas-em-geral',
+    image: svcReformas,
     title: 'Reformas em Geral',
     icon: HardHat,
     description: 'Soluções completas de reforma para residências, escritórios, salas comerciais e apartamentos.',
