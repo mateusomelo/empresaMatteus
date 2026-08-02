@@ -3,6 +3,7 @@ import Container from '../Common/Container.jsx'
 import SectionHeading from '../Common/SectionHeading.jsx'
 import Reveal from '../Common/Reveal.jsx'
 import GlassCard from '../Common/GlassCard.jsx'
+import aboutEmpresa from '../../assets/iso/about-empresa.jpg'
 
 const pillars = [
   { icon: Server, label: 'Infraestrutura & Redes' },
@@ -45,6 +46,16 @@ export default function About() {
           </div>
 
           <Reveal direction="left" delay={0.1}>
+            <div className="mb-6 overflow-hidden rounded-2xl border border-white/10">
+              <img
+                src={aboutEmpresa}
+                alt="Ilustração isométrica de escritório com estações de trabalho e rack de rede"
+                loading="lazy"
+                width={640}
+                height={640}
+                className="aspect-[16/10] w-full object-cover"
+              />
+            </div>
             <div className="grid grid-cols-2 gap-4">
               {pillars.map(({ icon: Icon, label }, index) => (
                 <GlassCard key={label} className={index % 2 === 1 ? 'translate-y-6 p-6' : 'p-6'}>

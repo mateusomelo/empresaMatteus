@@ -14,6 +14,20 @@ import {
   Lightbulb,
   HardHat,
 } from 'lucide-react'
+import projDatacenter from '../assets/iso/proj-datacenter.jpg'
+import projAutomacao from '../assets/iso/proj-automacao.jpg'
+import projAcesso from '../assets/iso/proj-acesso.jpg'
+import svcCorporativa from '../assets/iso/svc-corporativa.jpg'
+import svcRack from '../assets/iso/svc-rack.jpg'
+import svcCftv from '../assets/iso/svc-cftv.jpg'
+import svcTelefonia from '../assets/iso/svc-telefonia.jpg'
+import svcDev from '../assets/iso/svc-dev.jpg'
+import svcSistemas from '../assets/iso/svc-sistemas.jpg'
+import svcCabeamento from '../assets/iso/svc-cabeamento.jpg'
+import svcHidraulica from '../assets/iso/svc-hidraulica.jpg'
+import svcPintura from '../assets/iso/svc-pintura.jpg'
+import svcEletrica from '../assets/iso/svc-eletrica.jpg'
+import svcReformas from '../assets/iso/svc-reformas.jpg'
 
 export const portfolioCategories = [
   { id: 'todos', label: 'Todos' },
@@ -48,7 +62,7 @@ export const portfolioItems = [
     description:
       'Implantação de rede corporativa segmentada por VLAN, com redundância de links e monitoramento ativo.',
     technologies: ['VLAN', 'Switches gerenciáveis', 'Firewall'],
-    image: null,
+    image: svcCorporativa,
     projectUrl: null,
     githubUrl: null,
   },
@@ -59,7 +73,7 @@ export const portfolioItems = [
     title: 'Organização de rack de telecomunicações',
     description: 'Padronização, identificação e certificação de um rack completo de telecomunicações.',
     technologies: ['Patch Panel', 'Certificação', 'Etiquetagem'],
-    image: null,
+    image: svcRack,
     projectUrl: null,
     githubUrl: null,
   },
@@ -70,7 +84,7 @@ export const portfolioItems = [
     title: 'Monitoramento CFTV com câmeras IP',
     description: 'Projeto de câmeras IP com gravação em NVR e acesso remoto via aplicativo.',
     technologies: ['Câmeras IP', 'NVR', 'Acesso remoto'],
-    image: null,
+    image: svcCftv,
     projectUrl: null,
     githubUrl: null,
   },
@@ -81,7 +95,7 @@ export const portfolioItems = [
     title: 'Central telefônica corporativa',
     description: 'Instalação e manutenção de sistema de telefonia com passagem de cabos e testes de linha.',
     technologies: ['Telefonia IP', 'Cabeamento', 'Testes de linha'],
-    image: null,
+    image: svcTelefonia,
     projectUrl: null,
     githubUrl: null,
   },
@@ -92,7 +106,7 @@ export const portfolioItems = [
     title: 'Automação residencial inteligente',
     description: 'Controle de iluminação, portões e climatização integrados em um único aplicativo.',
     technologies: ['Automação residencial', 'Sensores', 'Integração via app'],
-    image: null,
+    image: projAutomacao,
     projectUrl: null,
     githubUrl: null,
   },
@@ -103,7 +117,7 @@ export const portfolioItems = [
     title: 'Controle de acesso biométrico',
     description: 'Implantação de controle de acesso por biometria e cartão RFID em ambiente corporativo.',
     technologies: ['Biometria', 'RFID', 'Controladoras'],
-    image: null,
+    image: projAcesso,
     projectUrl: null,
     githubUrl: null,
   },
@@ -114,7 +128,7 @@ export const portfolioItems = [
     title: 'Site institucional de alta performance',
     description: 'Desenvolvimento de site institucional responsivo com foco em performance e SEO.',
     technologies: ['React', 'Vite', 'Tailwind CSS'],
-    image: null,
+    image: svcDev,
     projectUrl: null,
     githubUrl: null,
   },
@@ -125,7 +139,7 @@ export const portfolioItems = [
     title: 'Painel administrativo de processos',
     description: 'Sistema de gestão interna com dashboards, permissões e controle de usuários.',
     technologies: ['React', 'Node.js', 'API REST'],
-    image: null,
+    image: svcSistemas,
     projectUrl: null,
     githubUrl: null,
   },
@@ -136,7 +150,7 @@ export const portfolioItems = [
     title: 'Estruturação de sala de servidores',
     description: 'Organização de datacenter com energia redundante, climatização e rack padronizado.',
     technologies: ['Servidores', 'Rack', 'Energia redundante'],
-    image: null,
+    image: projDatacenter,
     projectUrl: null,
     githubUrl: null,
   },
@@ -147,7 +161,7 @@ export const portfolioItems = [
     title: 'Cabeamento estruturado Cat6',
     description: 'Lançamento, organização e certificação de pontos de rede em cabeamento Cat6.',
     technologies: ['Cat6', 'Certificação', 'Patch Panel'],
-    image: null,
+    image: svcCabeamento,
     projectUrl: null,
     githubUrl: null,
   },
@@ -158,7 +172,7 @@ export const portfolioItems = [
     title: 'Reparo hidráulico residencial',
     description: 'Caça-vazamento com tecnologia e substituição de trechos de tubulação danificados.',
     technologies: ['Caça-vazamento', 'Tubos e registros', 'Instalações hidráulicas'],
-    image: null,
+    image: svcHidraulica,
     projectUrl: null,
     githubUrl: null,
   },
@@ -169,7 +183,7 @@ export const portfolioItems = [
     title: 'Pintura com acabamento fino',
     description: 'Pintura lisa e grafiato com acabamento profissional para ambientes residenciais e comerciais.',
     technologies: ['Pintura lisa', 'Grafiato', 'Acabamento fino'],
-    image: null,
+    image: svcPintura,
     projectUrl: null,
     githubUrl: null,
   },
@@ -180,7 +194,7 @@ export const portfolioItems = [
     title: 'Infraestrutura elétrica residencial',
     description: 'Instalação de quadro de distribuição e infraestrutura elétrica nova com tomadas inteligentes.',
     technologies: ['Quadro de distribuição', 'Infraestrutura nova', 'Tomadas inteligentes'],
-    image: null,
+    image: svcEletrica,
     projectUrl: null,
     githubUrl: null,
   },
@@ -191,7 +205,7 @@ export const portfolioItems = [
     title: 'Reforma completa de sala comercial',
     description: 'Reforma completa incluindo hidráulica, elétrica, pintura e acabamento final do ambiente.',
     technologies: ['Hidráulica', 'Elétrica', 'Pintura', 'Acabamento'],
-    image: null,
+    image: svcReformas,
     projectUrl: null,
     githubUrl: null,
   },
