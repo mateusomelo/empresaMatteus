@@ -14,6 +14,9 @@ import {
   Lightbulb,
   HardHat,
 } from 'lucide-react'
+import projDatacenter from '../assets/iso/proj-datacenter.jpg'
+import projAutomacao from '../assets/iso/proj-automacao.jpg'
+import projAcesso from '../assets/iso/proj-acesso.jpg'
 
 export const portfolioCategories = [
   { id: 'todos', label: 'Todos' },
@@ -92,7 +95,7 @@ export const portfolioItems = [
     title: 'Automação residencial inteligente',
     description: 'Controle de iluminação, portões e climatização integrados em um único aplicativo.',
     technologies: ['Automação residencial', 'Sensores', 'Integração via app'],
-    image: null,
+    image: projAutomacao,
     projectUrl: null,
     githubUrl: null,
   },
@@ -103,7 +106,7 @@ export const portfolioItems = [
     title: 'Controle de acesso biométrico',
     description: 'Implantação de controle de acesso por biometria e cartão RFID em ambiente corporativo.',
     technologies: ['Biometria', 'RFID', 'Controladoras'],
-    image: null,
+    image: projAcesso,
     projectUrl: null,
     githubUrl: null,
   },
@@ -136,7 +139,7 @@ export const portfolioItems = [
     title: 'Estruturação de sala de servidores',
     description: 'Organização de datacenter com energia redundante, climatização e rack padronizado.',
     technologies: ['Servidores', 'Rack', 'Energia redundante'],
-    image: null,
+    image: projDatacenter,
     projectUrl: null,
     githubUrl: null,
   },

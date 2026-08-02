@@ -17,6 +17,12 @@ import {
   Lightbulb,
   HardHat,
 } from 'lucide-react'
+import svcRedes from '../assets/iso/svc-redes.jpg'
+import svcCftv from '../assets/iso/svc-cftv.jpg'
+import svcAcesso from '../assets/iso/svc-acesso.jpg'
+import svcAutomacao from '../assets/iso/svc-automacao.jpg'
+import svcEletrica from '../assets/iso/svc-eletrica.jpg'
+import svcDev from '../assets/iso/svc-dev.jpg'
 
 /**
  * Serviços sem "contactChannel" usam o WhatsApp/e-mail de tecnologia
@@ -27,6 +33,7 @@ import {
 export const services = [
   {
     id: 'infraestrutura-ti',
+    image: svcRedes,
     title: 'Infraestrutura de TI',
     icon: Server,
     description:
@@ -56,6 +63,7 @@ export const services = [
   },
   {
     id: 'cftv',
+    image: svcCftv,
     title: 'CFTV',
     icon: Camera,
     description: 'Instalação e configuração de câmeras, DVR e NVR com monitoramento remoto.',
@@ -63,6 +71,7 @@ export const services = [
   },
   {
     id: 'controle-de-acesso',
+    image: svcAcesso,
     title: 'Controle de Acesso',
     icon: Fingerprint,
     description: 'Soluções de biometria, RFID, fechaduras e reconhecimento facial para segurança de ambientes.',
@@ -84,6 +93,7 @@ export const services = [
   },
   {
     id: 'configuracao-de-equipamentos',
+    image: svcAutomacao,
     title: 'Configuração de Equipamentos',
     icon: SlidersHorizontal,
     description: 'Configuração avançada de switches, roteadores, firewall, VLAN e VPN.',
@@ -91,6 +101,7 @@ export const services = [
   },
   {
     id: 'desenvolvimento-de-sites',
+    image: svcDev,
     title: 'Desenvolvimento de Sites',
     icon: Globe,
     description: 'Sites institucionais, landing pages, catálogos e portais modernos e responsivos.',
@@ -135,6 +146,7 @@ export const services = [
   },
   {
     id: 'eletricista',
+    image: svcEletrica,
     title: 'Eletricista',
     icon: Lightbulb,
     description: 'Instalação de quadros, infraestrutura elétrica nova e tomadas inteligentes com segurança.',
