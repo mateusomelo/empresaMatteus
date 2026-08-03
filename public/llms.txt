@@ -1,0 +1,19 @@
+# Matteus Soluções Completas
+
+> Tecnologia e serviços completos para empresas e residências: infraestrutura de TI, redes corporativas, CFTV, controle de acesso, automação, telefonia e desenvolvimento de sistemas e sites — além de encanador, pintor, eletricista e reformas em geral, na linha Soluções Completas.
+
+Site institucional (SPA) com orçamento via formulário ou WhatsApp, portfólio de tipos de projeto, perguntas frequentes e detalhes de todos os serviços oferecidos.
+
+## Páginas
+
+- [Início](https://www.matteussolucoes.com.br/): Apresentação da empresa, serviços de tecnologia e da linha Soluções Completas, portfólio, depoimentos, FAQ e formulário de orçamento.
+- [Política de Privacidade](https://www.matteussolucoes.com.br/politica-de-privacidade): Como os dados enviados pelo formulário de contato são coletados e usados.
+- [Termos de Uso](https://www.matteussolucoes.com.br/termos-de-uso): Condições de uso do site e dos serviços apresentados.
+
+## Serviços
+
+- Infraestrutura de TI, redes corporativas, cabeamento estruturado
+- CFTV, controle de acesso e automação residencial/comercial
+- Telefonia e suporte técnico
+- Desenvolvimento de sites e sistemas
+- Encanador, pintor, eletricista e reformas em geral (Soluções Completas)

@@ -16,7 +16,7 @@ export default function Experience() {
 
         <div className="mt-16">
           <Reveal>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-neon-500 dark:text-neon-300">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-neon-600 dark:text-neon-300">
               Infraestrutura & Campo
             </h3>
           </Reveal>
@@ -29,7 +29,7 @@ export default function Experience() {
 
         <div className="mt-16">
           <Reveal>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-neon-500 dark:text-neon-300">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-neon-600 dark:text-neon-300">
               Serviços Residenciais & Reformas
             </h3>
           </Reveal>
@@ -42,7 +42,7 @@ export default function Experience() {
 
         <div className="mt-16">
           <Reveal>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-neon-500 dark:text-neon-300">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-neon-600 dark:text-neon-300">
               Desenvolvimento Web
             </h3>
           </Reveal>

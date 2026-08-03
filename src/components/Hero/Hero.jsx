@@ -35,12 +35,15 @@ export default function Hero() {
             Tecnologia &bull; Elétrica &bull; Hidráulica &bull; Reformas
           </motion.span>
 
-          <motion.h1
-            variants={item}
-            className="mt-7 text-4xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-6xl"
-          >
+          {/*
+            Elemento de LCP: renderizado sempre visível, sem fade-in do Framer Motion.
+            Animar a opacidade do maior elemento de texto da página atrasa o momento em
+            que o Chrome considera o "maior conteúdo pintado", prejudicando o LCP medido
+            (chegou a ~2s de atraso de renderização antes desta correção).
+          */}
+          <h1 className="mt-7 text-4xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-6xl">
             Tecnologia que <span className="text-gradient">impulsiona</span> empresas.
-          </motion.h1>
+          </h1>
 
           <motion.p variants={item} className="mt-6 text-base leading-relaxed text-graphite-200 sm:text-lg lg:text-xl">
             Somos especialistas em Infraestrutura de TI, Redes Corporativas, Datacenter, Telefonia, CFTV, Controle de

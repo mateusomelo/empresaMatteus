@@ -40,7 +40,7 @@ export default function Navbar() {
       )}
     >
       <Container className="flex h-18 items-center justify-between py-3">
-        <a href="#inicio" className="shrink-0" aria-label="Ir para o início">
+        <a href="#inicio" className="shrink-0">
           <Logo light={overHero} />
         </a>
 
@@ -57,7 +57,7 @@ export default function Navbar() {
                   isActive
                     ? overHero
                       ? 'text-neon-300'
-                      : 'text-neon-500 dark:text-neon-300'
+                      : 'text-neon-600 dark:text-neon-300'
                     : overHero
                       ? 'text-graphite-200 hover:text-white'
                       : 'text-graphite-500 hover:text-ink-950 dark:text-graphite-300 dark:hover:text-white',

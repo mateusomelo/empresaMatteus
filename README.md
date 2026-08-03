@@ -125,9 +125,15 @@ O formulário em `#contato` já está integrado ao **Netlify Forms** — funcion
 
 ## Performance e acessibilidade
 
-- Fontes (Inter e Space Grotesk) auto-hospedadas via `@fontsource` — sem requisições a servidores externos de fonte.
-- Code-splitting por rota (`React.lazy`) para Política de Privacidade, Termos de Uso e 404; a seção de Depoimentos (que depende do Swiper) também é carregada sob demanda.
+Auditado com Lighthouse real (Chrome DevTools) contra o build de produção em 2026-07-31: **Accessibility 100, Best Practices 100, SEO 100, Agentic Browsing 100** (desktop e mobile, 0 auditorias falhando), LCP ≈ 724ms e CLS 0.00 no trace de performance. Decisões que sustentam esse resultado:
+
+- **Fontes** (Inter e Space Grotesk) auto-hospedadas via `@fontsource` com `font-display: swap` — sem requisições a servidores externos de fonte, sem texto invisível durante o carregamento.
+- **Code-splitting** (`React.lazy` + `Suspense`) para Política de Privacidade, Termos de Uso, 404, e para Serviços/Serviços Especializados/Portfólio/Depoimentos (todas dependem do Swiper, um chunk pesado) — mantém esse JS fora do caminho crítico do primeiro render.
+- **O elemento de LCP (`<h1>` do Hero) nunca é animado** — é renderizado imediatamente visível, sem fade-in do Framer Motion. Animar a opacidade do maior elemento de texto da página atrasa o momento em que o navegador considera o "maior conteúdo pintado"; chegou a ~2s de atraso de renderização antes dessa correção, caiu para ~720ms depois. As demais animações de entrada (badge, parágrafos, botões) continuam normalmente.
 - Animações respeitam `prefers-reduced-motion` (via `useReducedMotion` do Framer Motion no componente `Reveal`).
+- Estrutura de lista semântica correta: o `Reveal` usado dentro de um `<ol>`/`<ul>` deve receber `as="li"` (ver `Timeline.jsx`) — sem isso, o wrapper `<div>` do Framer Motion quebra a relação pai/filho exigida por leitores de tela.
+- Cores de texto sobre fundo claro usam `neon-600` (não `neon-500`, que fica abaixo de 4.5:1 de contraste em texto pequeno); o botão de WhatsApp usa um verde mais escuro que o oficial `#25D366` (que só atinge 1.98:1 com texto branco).
+- `public/llms.txt` (formato [llms.txt](https://llmstxt.org/)) descreve o site para crawlers de LLMs.
 - Imagens reais adicionadas futuramente (portfólio) devem usar `loading="lazy"` e formato `.webp` — o componente de card já está preparado para isso.
 - Dark mode com classe (`.dark`), persistido em `localStorage`, sem flash de tema errado no carregamento (script inline em `index.html`).
 

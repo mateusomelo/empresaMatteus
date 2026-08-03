@@ -26,7 +26,7 @@ export default function SectionHeading({
               'inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-widest',
               light
                 ? 'border-neon-400/30 bg-white/5 text-neon-300'
-                : 'border-neon-500/30 bg-neon-500/5 text-neon-500 dark:text-neon-300',
+                : 'border-neon-500/30 bg-neon-500/5 text-neon-600 dark:text-neon-300',
             )}
           >
             {eyebrow}

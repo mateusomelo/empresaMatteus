@@ -8,7 +8,9 @@ const variants = {
   ghost:
     'text-ink-900 dark:text-white hover:bg-graphite-100/70 dark:hover:bg-white/5',
   whatsapp:
-    'bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#25D366]/40 focus-visible:outline-[#25D366]',
+    // Verde mais escuro que o brand "#25D366" oficial: o oficial não passa em contraste
+    // AA (1.98:1) com texto branco; este atinge ~4.8:1, mantendo a identidade "WhatsApp".
+    'bg-[#0E8345] text-white shadow-lg shadow-[#0E8345]/30 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#0E8345]/40 focus-visible:outline-[#0E8345]',
 }
 
 const sizes = {
